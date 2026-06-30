@@ -62,7 +62,7 @@ Data flows **rightward** for Matrix A elements and **downward** for Matrix B ele
 #### 1.4.2 Systolic Grid Topology
 
 The `systolic_grid` module instantiates an **N×N mesh** of PEs using Verilog `generate` blocks:
-![FPGA Top Architecture](riscV/Images/systolic_array.png)
+![Systolic array](riscV/Images/Systolic_array.png)
 
 After **2N − 1 = 7 clock cycles** of staggered data feeding, every PE accumulates its corresponding element of the result matrix: `acc[i][j] = Σₖ A[i][k] × B[k][j]`.
 
@@ -173,8 +173,7 @@ The simulation verifies functional correctness by tracing the complete sequence 
 
 ### 2.4 Simulation Waveform
 
-**[PLACEHOLDER: Insert RTL Simulation Waveform / Testbench Output Screenshot Here]**
-
+![RTL Simulation Waveform](riscV/Images/simulation.png)
 ---
 
 ## 3. FPGA Emulation & Hardware Implementation
@@ -229,12 +228,16 @@ To enable real-time hardware debugging without additional test equipment, a Xili
 
 ### 3.5 FPGA Setup
 
-**[PLACEHOLDER: Insert FPGA Setup Photo Here]**
+![setup](riscV/Images/setup.jpeg)
 
 ### 3.6 Hardware Emulation Output
+**Cycles using systolic array(mem_wd)**
 
-**[PLACEHOLDER: Insert Integrated Logic Analyzer (ILA) / Hardware Emulation Output Photo Here]**
+![ILA Output](riscV/Images/Systolic_time.png)
 
+**Cycles using ALU(mem_wd)**
+
+![ILA Output](riscV/Images/alu_time.png)
 ---
 
 ## 4. Output Verification & Execution Analysis
